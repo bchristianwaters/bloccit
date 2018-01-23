@@ -1,5 +1,13 @@
  require 'random_data'
 
+ 50.times do
+   Question.create!(
+     title:  RandomData.random_sentence,
+     body:   RandomData.random_paragraph,
+     resolved: 1
+   )
+ end
+
  # Create Posts
  50.times do
    Post.create!(
@@ -19,3 +27,4 @@
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+ puts "#{Question.count} questions created"
