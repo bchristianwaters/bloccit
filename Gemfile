@@ -97,3 +97,6 @@
  end
  
  gem 'bootstrap-sass'
+ 
+ # User for encrypting passwords
+ gem 'bcrypt'
