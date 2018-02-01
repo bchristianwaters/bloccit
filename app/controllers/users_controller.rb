@@ -1,4 +1,5 @@
  class UsersController < ApplicationController
+   protect_from_forgery prepend: true
    def new
      @user = User.new
    end
@@ -7,8 +8,8 @@
      @user = User.new
      @user.name = params[:user][:name]
      @user.email = params[:user][:email]
-     # @user.password = params[:user][:password]
-     # @user.password_confirmation = params[:user][:password_confirmation]
+     @user.password = params[:user][:password]
+     @user.password_confirmation = params[:user][:password_confirmation]
    end
 
    def create
