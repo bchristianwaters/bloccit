@@ -74,6 +74,11 @@ RSpec.describe Post, type: :model do
          post.votes.create!(value: -1, user: user)
          expect(post.rank).to eq (old_rank - 1)
        end
+       
+       it "poster automatically gives an up vote" do
+          new_post = topic.posts.create!(title: title, body: "lkjfdsalkjfdslkjfdslkjfdsalkjfdsalkjfdsa fdslkjafdslkj", user: user)
+          expect(new_post.points).to eq (1)
+       end
      end
    end
 end
