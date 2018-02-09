@@ -37,6 +37,9 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  # Raise an error if mailing fails
+  config.raise_delivery_errors = true
+  
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
@@ -51,4 +54,5 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  config.action_mailer.default_url_options = { host: 'ab32f48e03914c9299efffaf3bb7a068.vfs.cloud9.us-east-2.amazonaws.com' }
 end
