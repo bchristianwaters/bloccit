@@ -13,4 +13,16 @@
  
      mail(to: user.email, subject: "New comment on #{post.title}")
    end
+   
+   def new_post(user, post)
+     
+     headers["Message-ID"] = "<post/#{post.id}@ancient-temple-28002.herokuapp.com/>"
+     headers["In-Reply-To"] = "<post/#{post.id}@ancient-temple-28002.herokuapp.com/>"
+     headers["References"] = "<post/#{post.id}@ancient-temple-28002.herokuapp.com/>"
+     
+     @user = user
+     @post = post
+     
+     mail(to: user.email, subject: "You created and are now following #{post.title}") 
+   end
  end

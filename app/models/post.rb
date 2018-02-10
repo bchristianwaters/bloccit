@@ -5,6 +5,8 @@
    has_many :votes, dependent: :destroy
    has_many :favorites, dependent: :destroy
    
+   after_create :send_follow_email
+   
    default_scope { order('rank DESC') }
     
    validates :title, length: { minimum: 5 }, presence: true
@@ -29,4 +31,9 @@
      new_rank = points + age_in_days
      update_attribute(:rank, new_rank)
    end
+   
+   def send_follow_email
+     FavoriteMailer.new_post(self.user, self).deliver_now
+   end
+   
  end
