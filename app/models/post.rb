@@ -33,6 +33,7 @@
    end
    
    def send_follow_email
+     Favorite.create(post: self, user: self.user)
      FavoriteMailer.new_post(self.user, self).deliver_now
    end
    
