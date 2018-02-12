@@ -17,14 +17,6 @@ require 'rails_helper'
          post :create, params: { post_id: my_post.id }
          expect(response).to redirect_to([my_topic, my_post])
        end
- 
-      describe 'DELETE destroy' do
-       it 'redirects the user to the sign in view' do
-         favorite = my_user.favorites.where(post: my_post).create
-         delete :destroy, params: { post_id: my_post.id, id: favorite.id }
-         expect(response).to redirect_to(new_session_path)
-       end
-     end
      
        it 'creates a favorite for the current user and specified post' do
          expect(my_user.favorites.find_by_post_id(my_post.id)).to be_nil
