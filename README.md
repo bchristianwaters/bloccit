@@ -1,24 +1,18 @@
-# README
+This is an internet forum app.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Start by forking, pulling down, or cloning this app.
 
-Things you may want to cover:
+In order for bloccit to run successfully, you need a Sengrid account. You can 
+create one at sendgrid.com/.
 
-* Ruby version
+After creating a Sendgrid account, you need to set the SENDGRID_USERNAME and 
+SENDGRID_PASSWORD environment variables to your sengrid username and password 
+respectively.
 
-* System dependencies
+Then you can run the application and it should like the following:
 
-* Configuration
+![Profile](/lib/assets/bloccit-profile.png?raw=true "Profile")
 
-* Database creation
+![Topic](/lib/assets/bloccit-topic.png?raw=true "Topic")
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Post](/lib/assets/bloccit-post.png?raw=true "Post")
